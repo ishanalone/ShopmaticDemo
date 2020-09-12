@@ -1,10 +1,12 @@
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation'
 import AlbumListScreen from '../Screens/AlbumListScreen';
+import AlbumDetailScreen from '../Screens/AlbumDetailScreen';
 import Colors from '../Constants/Colors'
 
 const AlbumNavigator = createStackNavigator({
-    albumList : AlbumListScreen
+    albumList : AlbumListScreen,
+    albumDetail : AlbumDetailScreen
 }, {
     defaultNavigationOptions : {
         headerStyle : {

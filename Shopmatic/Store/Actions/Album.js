@@ -25,7 +25,15 @@ export const fetchAlbums = () => {
             const artistDict = item['im:artist'];
             const artist = artistDict['label'];
             const imageArray = item['im:image'];
-            const imageDict = imageArray[2];
+            var imageDict = [];
+            for (const imageKey in imageArray){
+                const imageItem = imageArray[imageKey];
+                const attribute = imageItem['attributes'];
+                const height = attribute['height'];
+                if (height == 170){
+                    imageDict = imageItem
+                }
+            }
             const imageUrl = imageDict['label'];
             const priceDict = item['im:price'];
             const price = priceDict['label'];
