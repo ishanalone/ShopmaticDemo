@@ -44,7 +44,8 @@ AlbumListScreen.navigationOptions = {
 const styles = StyleSheet.create({
     category : {
         fontSize : 18,
-        fontWeight : 'bold'
+        fontWeight : 'bold',
+        color : 'black'
     }
 });
 
