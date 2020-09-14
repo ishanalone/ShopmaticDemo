@@ -10,14 +10,14 @@ const AlbumDetailScreen = props => {
         <View>
         <View style={styles.topView}>
             <Image style={styles.image} source = {{uri:album.imageUrl}}/>
-            
-            <Text style={styles.title} numberOfLines={3}>{album.title}</Text>
-            
+            <View style = {styles.sideView}>
+                <Text style={styles.title} numberOfLines={5}>{album.title}</Text>
+                <Text style={styles.artist}>{album.artist}</Text>
+                <Text style={styles.price}>{album.price}</Text>
+                <Text style={styles.price}>{album.releaseDate}</Text>
+            </View>
         </View>
-        <View >
-            <Text style={styles.artist}>{album.artist}</Text>
-            <Text style={styles.price}>{album.price}</Text>
-        </View>
+        
         </View>
     );
 }
@@ -36,26 +36,29 @@ const styles = StyleSheet.create({
         borderRadius : 5,
         resizeMode : 'stretch',
         marginLeft : 10,
-        marginTop : 10
+        marginTop : 10,
+        flex : 1
     },
     topView : {
         flexDirection : 'row'
     },
     sideView : {
         marginLeft : 10,
-        marginTop : 10
+        marginTop : 10,
+        flex : 1.5
     },
     artist : {
         fontSize : 18,
-        fontWeight : 'bold'
+        fontWeight : 'bold',
+        marginTop : 10
     },
     price : {
         fontSize : 14
     },
     title : {
-        fontSize : 25,
-        fontWeight : 'bold',
-        margin : 5
+        fontSize : 22,
+        fontWeight : 'bold'
+       
     }
 });
 
