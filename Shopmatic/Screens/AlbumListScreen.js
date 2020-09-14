@@ -24,7 +24,16 @@ const AlbumListScreen = props => {
                                 keyExtractor = {(item, index) => index.toString()}
                                 renderItem={(albumData) => {
                                     return(
-                                        <AlbumCell image={albumData.item.imageUrl} title={albumData.item.title} price={albumData.item.price}/>
+                                        <AlbumCell 
+                                            image={albumData.item.imageUrl} 
+                                            title={albumData.item.title} 
+                                            price={albumData.item.price}
+                                            onPress={() => {
+                                                props.navigation.navigate('albumDetail',{
+                                                    albumId : albumData.item.id,
+                                                    albumTitle : albumData.item.title
+                                                });
+                                            }}/>
                                     );
                                 }}
                                 horizontal={true}
@@ -44,7 +53,8 @@ AlbumListScreen.navigationOptions = {
 const styles = StyleSheet.create({
     category : {
         fontSize : 18,
-        fontWeight : 'bold'
+        fontWeight : 'bold',
+        color : 'black'
     }
 });
 

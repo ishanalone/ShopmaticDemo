@@ -5,12 +5,16 @@ import Color from '../Constants/Colors'
 
 const AlbumCell = props => {
     return (
+        <TouchableOpacity
+        style={styles.button}
+        onPress={props.onPress}
+     >
         <View style = {styles.albumView}>
             <Image style = {styles.image} source = {{uri:props.image}}/>
             <Text style = {styles.title} numberOfLines={2}>{props.title}</Text>
             <Text style = {styles.price}>{props.price}</Text>
         </View>
-
+        </TouchableOpacity>
     );
 };
 
