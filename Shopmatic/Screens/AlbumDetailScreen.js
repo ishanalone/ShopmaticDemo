@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux'
+import moment from "moment";
 
 const AlbumDetailScreen = props => {
     const albumId = props.navigation.getParam('albumId');
@@ -14,7 +15,7 @@ const AlbumDetailScreen = props => {
                 <Text style={styles.title} numberOfLines={5}>{album.title}</Text>
                 <Text style={styles.artist}>{album.artist}</Text>
                 <Text style={styles.price}>{album.price}</Text>
-                <Text style={styles.price}>{album.releaseDate}</Text>
+                <Text style={styles.price}>{moment(album.releaseDate).format('ll')}</Text>
             </View>
         </View>
         
